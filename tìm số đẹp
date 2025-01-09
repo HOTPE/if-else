@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+using namespace std;
+int main()
+{
+	string n;
+	getline(cin, n);
+	int len = n.size();
+	int fd = n[0] - '0';
+	int ld = n[len - 1] - '0';
+	if (!(fd * 2 == ld || ld * 2 == fd))
+	{
+		cout << "NO" << endl;
+		return 0;
+	}
+	int left = 1, right = len - 2;
+	while (left < right)
+	{
+		if (n[left] != n[right])
+		{
+			cout << "NO" << endl;
+			return 0;
+		}
+		left++;
+		right--;
+	}
+		cout << "YES" << endl;
+		return 0;
+}
